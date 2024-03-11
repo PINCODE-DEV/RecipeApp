@@ -57,6 +57,11 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    //Lifecycle
+    implementation(libs.androidx.lifecycle.extensions)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
     //Dynamic Sizes
     implementation(libs.dynamic.sizes)
     // Coil
@@ -67,4 +72,20 @@ dependencies {
     // Dagger Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    //OkHTTP client
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+    //Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    // Gson
+    implementation(libs.gson)
+    // Shimmer
+    implementation(libs.shimmer)
+    implementation(libs.shimmer.recyclerview)
+    // Lottie
+    implementation(libs.lottie)
 }
