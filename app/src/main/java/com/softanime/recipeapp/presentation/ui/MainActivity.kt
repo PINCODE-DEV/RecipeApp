@@ -1,15 +1,17 @@
 package com.softanime.recipeapp.presentation.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.NavHostFragment
 import com.softanime.recipeapp.R
 import com.softanime.recipeapp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
+import io.github.inflationx.viewpump.ViewPumpContextWrapper
 
+
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     // Binding
     private var _binding: ActivityMainBinding? = null
@@ -23,6 +25,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         // Init Views()
         setupViews()
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase))
     }
 
     override fun navigateUpTo(upIntent: Intent?): Boolean {

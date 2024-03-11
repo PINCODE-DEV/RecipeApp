@@ -3,4 +3,6 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.plugin.kotlin.android) apply false
     alias(libs.plugins.com.android.library) apply false
+    alias(libs.plugins.plugin.hilt) apply false
+
 }

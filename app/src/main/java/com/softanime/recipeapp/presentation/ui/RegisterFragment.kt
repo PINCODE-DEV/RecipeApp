@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import coil.load
 import com.softanime.recipeapp.R
 import com.softanime.recipeapp.databinding.FragmentRegisterBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegisterFragment : Fragment() {
     // Binding
     private var _binding : FragmentRegisterBinding? = null
