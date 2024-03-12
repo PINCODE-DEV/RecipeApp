@@ -1,4 +1,4 @@
-package com.softanime.recipeapp.data.utils
+package com.softanime.recipeapp.utils
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

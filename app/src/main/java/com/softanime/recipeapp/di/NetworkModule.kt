@@ -3,8 +3,8 @@ package com.softanime.recipeapp.di
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.softanime.recipeapp.data.network.ApiServices
-import com.softanime.recipeapp.data.utils.Constants.BASE_URL
-import com.softanime.recipeapp.data.utils.Constants.CONNECTION_TIME
+import com.softanime.recipeapp.utils.Constants.BASE_URL
+import com.softanime.recipeapp.utils.Constants.CONNECTION_TIME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.softanime.recipeapp.data.utils
+package com.softanime.recipeapp.utils
 
 object Constants {
     const val BASE_URL = "https://api.spoonacular.com/"
