@@ -84,8 +84,8 @@ dependencies {
     // Gson
     implementation(libs.gson)
     // Shimmer
-    implementation(libs.shimmer)
-    implementation(libs.shimmer.recyclerview)
+    /*implementation(libs.shimmer)
+    implementation(libs.shimmer.recyclerview)*/
     // Lottie
     implementation(libs.lottie)
 }

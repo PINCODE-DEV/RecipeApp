@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName
 
 data class BodyRegister(
     @SerializedName("email")
-    val email: String,
+    var email: String? = null,
     @SerializedName("firstName")
-    val firstName: String,
+    var firstName: String? = null,
     @SerializedName("lastName")
-    val lastName: String,
+    var lastName: String? = null,
     @SerializedName("username")
-    val username: String
+    var username: String? = null
 )
