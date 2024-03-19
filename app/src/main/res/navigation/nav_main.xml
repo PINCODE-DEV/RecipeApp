@@ -3,11 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/registerFragment">
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.softanime.recipeapp.presentation.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" />
+
+    <action
+        android:id="@+id/actionToRegister"
+        app:destination="@id/registerFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.softanime.recipeapp.presentation.ui.RegisterFragment"
-        android:label="fragment_splash"
+        android:name="com.softanime.recipeapp.presentation.ui.register.RegisterFragment"
+        android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
+
+
+    <action
+        android:id="@+id/actionToRecipe"
+        app:destination="@id/recipeFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.softanime.recipeapp.presentation.ui.recipe.RecipeFragment"
+        android:label="fragment_recipe"
+        tools:layout="@layout/fragment_recipe" />
+
 </navigation>

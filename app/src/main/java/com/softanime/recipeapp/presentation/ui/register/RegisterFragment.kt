@@ -1,4 +1,4 @@
-package com.softanime.recipeapp.presentation.ui
+package com.softanime.recipeapp.presentation.ui.register
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import coil.load
 import com.softanime.recipeapp.R
 import com.softanime.recipeapp.data.models.register.BodyRegister

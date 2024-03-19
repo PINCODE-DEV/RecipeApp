@@ -1,5 +1,6 @@
 package com.softanime.recipeapp.presentation.viewModels
 
+import androidx.datastore.preferences.core.edit
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -24,4 +25,12 @@ class RegisterViewModel @Inject constructor(
         val response = repo.postRegister(apiKey, body)
         registerData.value = NetworkResponse(response).generalNetworkResponse()
     }
+
+    // Save User Info
+    fun saveUserInfo(username: String, hash: String) = viewModelScope.launch {
+        repo.saveUserInfo(username, hash)
+    }
+
+    // Read User Info
+    val readUserInfo = repo.readUserInfo
 }
