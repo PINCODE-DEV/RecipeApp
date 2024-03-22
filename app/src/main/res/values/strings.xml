@@ -9,4 +9,10 @@
     <string name="email">Email</string>
     <string name="emailInvalidate">Email Invalidate</string>
     <string name="current_version">version : 1.0</string>
+    <string name="recipe">Recipe</string>
+    <string name="search">Search</string>
+    <string name="lucky">Lucky</string>
+    <string name="favorite">Favorite</string>
+    <string name="header_recipe">What do you want to eat today?</string>
+    <string name="recent_recipes">Recent recipes</string>
 </resources>

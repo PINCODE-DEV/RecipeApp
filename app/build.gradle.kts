@@ -84,12 +84,11 @@ dependencies {
     // Gson
     implementation(libs.gson)
     // Shimmer
-    /*implementation(libs.shimmer)
-    implementation(libs.shimmer.recyclerview)*/
+    implementation(libs.shimmer)
+    implementation(libs.shimmer.recyclerview)
     // Lottie
     implementation(libs.lottie)
     //Datastore
-    implementation("androidx.datastore:datastore-preferences:1.0.0")
-
+    implementation(libs.androidx.datastore.preferences)
 
 }

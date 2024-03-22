@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/recipeFragment"
+        android:icon="@drawable/ic_pot_food"
+        android:title="@string/recipe" />
+
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/ic_magnifying_glass"
+        android:title="@string/search" />
+
+    <item
+        android:enabled="false"
+        android:id="@+id/fabFragment"
+        android:title="" />
+
+    <item
+        android:id="@+id/luckyFragment"
+        android:icon="@drawable/ic_wand_magic_sparkles"
+        android:title="@string/lucky" />
+
+    <item
+        android:id="@+id/favoriteFragment"
+        android:icon="@drawable/ic_heart"
+        android:title="@string/favorite" />
+</menu>

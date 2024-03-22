@@ -3,6 +3,7 @@ calligraphy3 = "3.1.1"
 coil = "2.6.0"
 constraintlayout = "2.1.4"
 appcompat = "1.6.1"
+datastorePreferences = "1.0.0"
 dynamicsizes = "1.0"
 espressoCore = "3.5.1"
 gson = "2.10.1"
@@ -17,6 +18,7 @@ lifecycleViewmodelKtx = "2.7.0"
 loggingInterceptor = "4.11.0"
 lottie = "5.2.0"
 material = "1.11.0"
+material2 = "1.6.1"
 kotlin = "1.8.22"
 okhttp = "4.12.0"
 retrofit = "2.9.0"
@@ -27,6 +29,7 @@ viewpump = "2.0.3"
 [libraries]
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junitVersion" }
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
@@ -46,7 +49,7 @@ kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutine
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
-material = { module = "com.google.android.material:material", version.ref = "material" }
+material = { module = "com.google.android.material:material", version.ref = "material2" }
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version = "2.7.6" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version = "2.7.6" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }

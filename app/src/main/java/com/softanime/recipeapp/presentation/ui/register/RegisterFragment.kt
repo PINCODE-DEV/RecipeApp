@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import coil.load
 import com.softanime.recipeapp.R
 import com.softanime.recipeapp.data.models.register.BodyRegister
@@ -24,20 +25,22 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
     // Binding
-    private var _binding : FragmentRegisterBinding? = null
+    private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
+
     // ViewModel
-    private val viewModel : RegisterViewModel by viewModels()
+    private val viewModel: RegisterViewModel by viewModels()
+
     // Body
     @Inject
-    lateinit var body : BodyRegister
+    lateinit var body: BodyRegister
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate Views
-        _binding = FragmentRegisterBinding.inflate(layoutInflater,container,false)
+        _binding = FragmentRegisterBinding.inflate(layoutInflater, container, false)
         //Init Views
         setupViews()
         return binding.root
@@ -49,9 +52,9 @@ class RegisterFragment : Fragment() {
 
             // Validate Email
             emailEdt.addTextChangedListener {
-                if (it.toString().contains("@") && it.toString().contains(".")){
+                if (it.toString().contains("@") && it.toString().contains(".")) {
                     emailTxtLay.error = ""
-                }else
+                } else
                     emailTxtLay.error = getString(R.string.emailInvalidate)
             }
 
@@ -67,16 +70,23 @@ class RegisterFragment : Fragment() {
                 body.email = email
 
                 // Call Api
-                viewModel.callRegisterApi(MY_API_KEY,body)
+                viewModel.callRegisterApi(MY_API_KEY, body)
 
                 CoroutineScope(Dispatchers.Main).launch {
-                    viewModel.registerData.observe(viewLifecycleOwner){ state ->
-                        when(state){
-                            is NetworkRequest.LOADING ->{}
-                            is NetworkRequest.SUCCESS ->{
-                                root.showSnackBar(state.data!!.hash)
+                    viewModel.registerData.observe(viewLifecycleOwner) { state ->
+                        when (state) {
+                            is NetworkRequest.LOADING -> {}
+                            is NetworkRequest.SUCCESS -> {
+                                state.data?.let {
+                                    // Save user info
+                                    viewModel.saveUserInfo(it.username, it.hash)
+                                    // navigate
+                                    findNavController().popBackStack(R.id.registerFragment, true)
+                                    findNavController().navigate(R.id.actionToRecipe)
+                                }
                             }
-                            is NetworkRequest.ERROR ->{
+
+                            is NetworkRequest.ERROR -> {
                                 root.showSnackBar(state.message!!)
                             }
                         }

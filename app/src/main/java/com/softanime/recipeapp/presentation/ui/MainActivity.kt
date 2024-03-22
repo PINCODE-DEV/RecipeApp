@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.softanime.recipeapp.R
 import com.softanime.recipeapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,6 +46,28 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             // Init NavHost
             navHost = supportFragmentManager.findFragmentById(R.id.navHost) as NavHostFragment
+            // Other
+            mainBottomNav.background = null
+            mainBottomNav.setupWithNavController(navHost.navController)
+
+            // Check current destination
+            navHost.navController.addOnDestinationChangedListener{_,destination,_ ->
+                when(destination.id){
+                    R.id.splashFragment -> showBottomNav(false)
+                    R.id.registerFragment -> showBottomNav(false)
+                    else -> showBottomNav(true)
+                }
+            }
+        }
+    }
+
+    private fun showBottomNav(state: Boolean) {
+        if (state) {
+            binding.mainBottomAppbar.isVisible = true
+            binding.mainFabMenu.isVisible = true
+        } else {
+            binding.mainBottomAppbar.isVisible = false
+            binding.mainFabMenu.isVisible = false
         }
     }
 }

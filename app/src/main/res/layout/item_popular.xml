@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--Card-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPopular"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_160mdp"
+        android:layout_marginHorizontal="@dimen/_4mdp"
+        android:layout_marginTop="@dimen/_5mdp"
+        app:cardCornerRadius="@dimen/_8mdp"
+        app:cardElevation="@dimen/_4mdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--Image-->
+        <ImageView
+            android:id="@+id/imgPopular"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <!--Shadow-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@drawable/bg_shadow_dark" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35mdp"
+        android:layout_marginHorizontal="@dimen/_20mdp"
+        android:layout_marginBottom="@dimen/_10mdp"
+        android:background="@drawable/bg_rounded_white"
+        android:elevation="@dimen/_5mdp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardPopular"
+        app:layout_constraintEnd_toEndOf="@+id/cardPopular"
+        app:layout_constraintStart_toStartOf="@+id/cardPopular"
+        app:layout_constraintTop_toBottomOf="@+id/cardPopular">
+
+        <TextView
+            android:id="@+id/txtPopularPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10mdp"
+            android:drawablePadding="@dimen/_3mdp"
+            android:gravity="center"
+            android:textColor="@color/jacarta"
+            android:textSize="@dimen/_9font_mdp"
+            app:drawableStartCompat="@drawable/ic_coins"
+            app:drawableTint="@color/chineseYellow"
+            app:fontPath="fonts/atlas_bold.ttf"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="125$" />
+
+        <TextView
+            android:id="@+id/txtPopularName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10mdp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtPopularPrice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Rice &amp; meet" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

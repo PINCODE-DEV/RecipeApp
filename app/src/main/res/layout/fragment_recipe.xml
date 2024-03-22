@@ -1,14 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.ui.recipe.RecipeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <!--Header-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15mdp"
+        android:layout_marginTop="@dimen/_10mdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <!--Avatar-->
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="@dimen/_40mdp"
+            android:layout_height="@dimen/_40mdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_circle_user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/jacarta" />
+
+        <!--Name-->
+        <TextView
+            android:id="@+id/txtUsername"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10mdp"
+            android:layout_marginTop="@dimen/_7mdp"
+            android:textColor="@color/darkGreen"
+            android:textSize="@dimen/_14font_mdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hello, mr.shahin" />
+
+        <!--Desc-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3mdp"
+            android:text="@string/header_recipe"
+            android:textColor="@color/darkGreen"
+            android:textSize="@dimen/_7font_mdp"
+            app:layout_constraintEnd_toEndOf="@id/txtUsername"
+            app:layout_constraintStart_toStartOf="@id/txtUsername"
+            app:layout_constraintTop_toBottomOf="@+id/txtUsername" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--Popular-->
+    <com.todkars.shimmer.ShimmerRecyclerView
+        android:id="@+id/popularList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_11mdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLay"
+        app:shimmer_recycler_auto_start="true"
+        app:shimmer_recycler_item_count="1"
+        app:shimmer_recycler_layout="@layout/item_popular_shimmer"
+        app:shimmer_recycler_shape="linear" />
+
+    <!--Title-->
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:text="@string/recent_recipes"
+        android:textColor="@color/darkSlategray"
+        android:textSize="@dimen/_12font_mdp"
+        app:layout_constraintStart_toStartOf="@+id/headerLay"
+        app:layout_constraintTop_toBottomOf="@+id/popularList" />
+
+    <!--Recipes-->
+    <com.todkars.shimmer.ShimmerRecyclerView
+        android:id="@+id/recipesList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_11mdp"
+        android:paddingBottom="@dimen/_75mdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+        app:shimmer_recycler_auto_start="true"
+        app:shimmer_recycler_item_count="1"
+        app:shimmer_recycler_layout="@layout/item_recipe_shimmer"
+        app:shimmer_recycler_shape="linear" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

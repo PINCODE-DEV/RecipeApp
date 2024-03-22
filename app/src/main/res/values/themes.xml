@@ -1,19 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.RecipeApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.RecipeApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/jacarta</item>
+        <item name="colorPrimaryVariant">@color/dark_gunmetal</item>
+        <item name="colorOnPrimary">@color/pastel_pink</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
     </style>
 
-    <style name="Theme.RecipeApp" parent="Base.Theme.RecipeApp" />
     <!--Dark green material button-->
     <style name="DarkGreenMaterialButton">
-        <item name="backgroundTint">@color/darkGreen</item>
-        <item name="cornerRadius">@dimen/_15mdp</item>
-        <item name="android:insetTop">0dp</item>
-        <item name="android:insetBottom">0dp</item>
-        <item name="android:textSize">@dimen/_14font_mdp</item>
+    <item name="backgroundTint">@color/darkGreen</item>
+    <item name="cornerRadius">@dimen/_15mdp</item>
+    <item name="android:insetTop">0dp</item>
+    <item name="android:insetBottom">0dp</item>
+    <item name="android:textSize">@dimen/_14font_mdp</item>
     </style>
+
     <!--TextInputLayout-->
     <style name="DarkGreenTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxStrokeColor">@color/darkGreen</item>
@@ -27,5 +31,11 @@
         <item name="boxStrokeErrorColor">@color/tart_orange</item>
         <item name="startIconTint">@color/darkGreen</item>
         <item name="hintTextColor">@color/moonstoneBlue</item>
+    </style>
+
+    <!--Circular Fab-->
+    <style name="CircularFab" parent="ShapeAppearanceOverlay.Material3.FloatingActionButton">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 </resources>

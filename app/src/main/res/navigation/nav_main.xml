@@ -39,5 +39,20 @@
         android:name="com.softanime.recipeapp.presentation.ui.recipe.RecipeFragment"
         android:label="fragment_recipe"
         tools:layout="@layout/fragment_recipe" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.softanime.recipeapp.presentation.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/luckyFragment"
+        android:name="com.softanime.recipeapp.presentation.ui.lucky.LuckyFragment"
+        android:label="fragment_lucky"
+        tools:layout="@layout/fragment_lucky" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.softanime.recipeapp.presentation.ui.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
 
 </navigation>

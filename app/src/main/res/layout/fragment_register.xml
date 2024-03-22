@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/first_name"
-                app:startIconDrawable="@drawable/baseline_person_24">
+                app:startIconDrawable="@drawable/ic_round_person_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/nameEdt"
@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/last_name"
-                app:startIconDrawable="@drawable/baseline_person_24">
+                app:startIconDrawable="@drawable/ic_round_person_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/lastNameEdt"
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/username"
-                app:startIconDrawable="@drawable/baseline_person_24">
+                app:startIconDrawable="@drawable/ic_round_person_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/usernameEdt"
@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
-                app:startIconDrawable="@drawable/baseline_email_24">
+                app:startIconDrawable="@drawable/ic_round_email_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailEdt"

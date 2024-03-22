@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.ui.MainActivity">
-
+    <!--Nav Host-->
     <fragment
         android:id="@+id/navHost"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -14,5 +13,39 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_main" />
+    <!--Bottom menu-->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/mainBottomAppbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:fabAnimationMode="scale"
+        app:fabCradleMargin="@dimen/_10mdp"
+        app:fabCradleRoundedCornerRadius="@dimen/_15mdp"
+        app:fabCradleVerticalOffset="@dimen/_10mdp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/mainBottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_15mdp"
+            app:itemIconTint="@color/item_bottom_nav_tint"
+            app:itemTextColor="@color/item_bottom_nav_tint"
+            app:labelVisibilityMode="selected"
+            app:menu="@menu/menu_main" />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+    <!--Menu-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mainFabMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_restaurant"
+        app:backgroundTint="@color/jacarta"
+        app:layout_anchor="@id/mainBottomAppbar"
+        app:tint="@color/white"
+        app:shapeAppearanceOverlay="@style/CircularFab"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

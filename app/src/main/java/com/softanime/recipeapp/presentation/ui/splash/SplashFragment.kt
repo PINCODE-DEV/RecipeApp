@@ -53,8 +53,7 @@ class SplashFragment : Fragment() {
                     findNavController().popBackStack(R.id.splashFragment,true)
                     // Check SignIn
                     if (it.username.isNotEmpty()){
-                        //findNavController().navigate(R.id.actionToRecipe)
-                        Toast.makeText(requireContext(),it.username,Toast.LENGTH_LONG).show()
+                        findNavController().navigate(R.id.actionToRecipe)
                     }
                     else
                         findNavController().navigate(R.id.actionToRegister)
