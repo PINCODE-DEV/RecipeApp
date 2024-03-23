@@ -6,4 +6,5 @@ import javax.inject.Inject
 
 class RemoteDataSource @Inject constructor(private val api: ApiServices) {
     suspend fun postRegister(apiKey: String, body: BodyRegister) = api.postRegister(apiKey, body)
+    suspend fun getRecipes(queries: Map<String,String>) = api.getRecipes(queries)
 }
