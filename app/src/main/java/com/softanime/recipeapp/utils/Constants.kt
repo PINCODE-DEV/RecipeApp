@@ -12,4 +12,12 @@ object Constants {
     // Keys
     const val REGISTER_USERNAME = "register_username"
     const val REGISTER_HASH = "register_hash"
+    const val SORT = "sort"
+    const val POPULARITY = "popularity"
+    const val ADD_RECIPE_INFORMATION = "addRecipeInformation"
+    const val TRUE = "true"
+
+    // Other
+    const val OLD_IMAGE_SIZE = "312x231.jpg"
+    const val NEW_IMAGE_SIZE = "636x393.jpg"
 }
