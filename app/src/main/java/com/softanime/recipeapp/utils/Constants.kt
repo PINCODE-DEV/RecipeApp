@@ -20,4 +20,5 @@ object Constants {
     // Other
     const val OLD_IMAGE_SIZE = "312x231.jpg"
     const val NEW_IMAGE_SIZE = "636x393.jpg"
+    const val AUTO_SCROLL_TIME = 5000L
 }

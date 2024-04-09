@@ -7,15 +7,13 @@
 
     <!--Card-->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardPopular"
+        android:id="@+id/cardLay"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_160mdp"
         android:layout_marginHorizontal="@dimen/_4mdp"
         android:layout_marginTop="@dimen/_5mdp"
         app:cardCornerRadius="@dimen/_8mdp"
-        app:cardElevation="@dimen/_4mdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:cardElevation="@dimen/_3mdp"
         app:layout_constraintTop_toTopOf="parent">
 
         <!--Image-->
@@ -42,11 +40,11 @@
         android:layout_marginHorizontal="@dimen/_20mdp"
         android:layout_marginBottom="@dimen/_10mdp"
         android:background="@drawable/bg_rounded_white"
-        android:elevation="@dimen/_5mdp"
-        app:layout_constraintBottom_toBottomOf="@+id/cardPopular"
-        app:layout_constraintEnd_toEndOf="@+id/cardPopular"
-        app:layout_constraintStart_toStartOf="@+id/cardPopular"
-        app:layout_constraintTop_toBottomOf="@+id/cardPopular">
+        android:elevation="@dimen/_4mdp"
+        app:layout_constraintBottom_toBottomOf="@id/cardLay"
+        app:layout_constraintEnd_toEndOf="@id/cardLay"
+        app:layout_constraintStart_toStartOf="@id/cardLay"
+        app:layout_constraintTop_toBottomOf="@id/cardLay">
 
         <TextView
             android:id="@+id/txtPopularPrice"

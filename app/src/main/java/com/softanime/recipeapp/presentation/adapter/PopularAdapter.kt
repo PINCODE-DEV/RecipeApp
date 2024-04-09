@@ -30,6 +30,10 @@ class PopularAdapter @Inject constructor() : RecyclerView.Adapter<PopularAdapter
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(items[position])
 
+    override fun getItemViewType(position: Int): Int = position
+
+    override fun getItemId(position: Int): Long = position.toLong()
+
     // VH
     inner class ViewHolder : RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
