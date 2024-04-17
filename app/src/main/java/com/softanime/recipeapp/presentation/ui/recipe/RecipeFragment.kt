@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearSnapHelper
 import com.softanime.recipeapp.R
 import com.softanime.recipeapp.databinding.FragmentRecipeBinding
 import com.softanime.recipeapp.presentation.adapter.PopularAdapter
+import com.softanime.recipeapp.presentation.adapter.RecipeAdapter
 import com.softanime.recipeapp.presentation.viewModels.RecipeViewModel
 import com.softanime.recipeapp.presentation.viewModels.RegisterViewModel
 import com.softanime.recipeapp.utils.Constants
@@ -34,9 +35,11 @@ class RecipeFragment : Fragment() {
     private val registerViewModel: RegisterViewModel by viewModels()
     private val viewModel: RecipeViewModel by viewModels()
 
-    // Adapter
+    // Adapters
     @Inject
     lateinit var popularAdapter: PopularAdapter
+    @Inject
+    lateinit var recipeAdapter: RecipeAdapter
 
     // Slider Position
     private var bannerIndex = 0
@@ -58,6 +61,8 @@ class RecipeFragment : Fragment() {
         }
         // Load Popular Data
         loadPopularData()
+        // Load Recipe Data
+        loadRecipeData()
     }
 
     @SuppressLint("SetTextI18n")
@@ -98,6 +103,36 @@ class RecipeFragment : Fragment() {
         }
     }
 
+    private fun loadRecipeData() {
+        // Call Recipe Api
+        viewModel.callRecipeApi(viewModel.recipeQueries())
+
+        // Collect Popular Data
+        viewModel.recipeData.observe(viewLifecycleOwner) { response ->
+            binding.apply {
+                when (response) {
+                    is NetworkRequest.LOADING -> {
+                        setupLoading(true, recipesList)
+                    }
+
+                    is NetworkRequest.SUCCESS -> {
+                        setupLoading(false, recipesList)
+                        response.data?.let { data ->
+                            if (response.data.results.isNotEmpty()) {
+                                recipeAdapter.setData(data.results)
+                                initRecipeRecycler()
+                            }
+                        }
+                    }
+
+                    is NetworkRequest.ERROR -> {
+                        setupLoading(false, recipesList)
+                    }
+                }
+            }
+        }
+    }
+
     private fun initPopularRecycler(listSize: Int) {
         binding.popularList.setupRecyclerView(
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false),
@@ -122,6 +157,17 @@ class RecipeFragment : Fragment() {
 
                 binding.popularList.smoothScrollToPosition(bannerIndex)
             }
+        }
+    }
+
+    private fun initRecipeRecycler() {
+        binding.recipesList.setupRecyclerView(
+            LinearLayoutManager(requireContext()),
+            recipeAdapter
+        )
+        // Item Click
+        recipeAdapter.setOnItemCLickListener {
+
         }
     }
 

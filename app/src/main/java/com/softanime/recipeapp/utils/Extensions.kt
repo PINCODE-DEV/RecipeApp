@@ -1,6 +1,8 @@
 package com.softanime.recipeapp.utils
 
 import android.view.View
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 
@@ -14,4 +16,9 @@ fun RecyclerView.setupRecyclerView(lM : RecyclerView.LayoutManager, myAdapter: R
         adapter= myAdapter
         hasFixedSize()
     }
+}
+
+fun TextView.setDynamicallyColor( color: Int){
+    this.setTextColor(ContextCompat.getColor(context,color))
+    this.compoundDrawables[1].setTint(ContextCompat.getColor(context,color))
 }

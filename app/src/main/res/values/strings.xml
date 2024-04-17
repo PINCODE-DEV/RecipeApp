@@ -16,4 +16,5 @@
     <string name="header_recipe">What do you want to eat today?</string>
     <string name="recent_recipes">Recent recipes</string>
     <string name="hello">Hello</string>
+    <string name="vegan">Vegan</string>
 </resources>

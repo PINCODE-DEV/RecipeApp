@@ -5,9 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/_15mdp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
     android:layout_marginVertical="@dimen/_5mdp"
     android:background="@drawable/bg_rounded_white"
-    android:elevation="@dimen/_2mdp">
+    android:elevation="@dimen/_2mdp"
+    tools:ignore="KeyboardInaccessibleWidget">
 
     <!--Card-->
     <com.google.android.material.card.MaterialCardView
@@ -132,7 +135,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/txtTime"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="125$" />
+            android:text="@string/vegan" />
 
         <!--Healthy-->
         <TextView
