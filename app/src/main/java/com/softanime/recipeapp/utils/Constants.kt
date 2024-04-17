@@ -25,6 +25,10 @@ object Constants {
     const val GLUTEN_FREE = "Gluten Free"
     const val LIMITED_COUNT = 50
 
+    // DataBase
+    const val DATABASE_NAME="recipe_database"
+    const val RECIPE_TABLE="recipe_table"
+
     // Other
     const val OLD_IMAGE_SIZE = "312x231.jpg"
     const val NEW_IMAGE_SIZE = "636x393.jpg"

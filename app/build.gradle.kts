@@ -90,5 +90,8 @@ dependencies {
     implementation(libs.lottie)
     //Datastore
     implementation(libs.androidx.datastore.preferences)
+    // Room
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
 
 }
