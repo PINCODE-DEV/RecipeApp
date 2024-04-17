@@ -60,6 +60,7 @@
 
     <!--Desc-->
     <TextView
+        android:textColorLink="@color/dolphinGray"
         android:id="@+id/txtDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

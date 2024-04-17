@@ -1,8 +1,11 @@
 package com.softanime.recipeapp.presentation.adapter
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
@@ -11,6 +14,7 @@ import com.softanime.recipeapp.R
 import com.softanime.recipeapp.data.models.recipe.ResponseRecipe.Result
 import com.softanime.recipeapp.databinding.ItemRecipeBinding
 import com.softanime.recipeapp.utils.BaseDiffUtils
+import com.softanime.recipeapp.utils.minToHour
 import com.softanime.recipeapp.utils.setDynamicallyColor
 import javax.inject.Inject
 
@@ -21,8 +25,11 @@ class RecipeAdapter @Inject constructor() : RecyclerView.Adapter<RecipeAdapter.V
     // Data
     private var items = emptyList<Result>()
 
+    private lateinit var context : Context
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         binding = ItemRecipeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        context = parent.context
         return ViewHolder()
     }
 
@@ -34,6 +41,16 @@ class RecipeAdapter @Inject constructor() : RecyclerView.Adapter<RecipeAdapter.V
 
     override fun getItemId(position: Int): Long = position.toLong()
 
+    override fun onViewAttachedToWindow(holder: ViewHolder) {
+        super.onViewAttachedToWindow(holder)
+        holder.initAnim()
+    }
+
+    override fun onViewDetachedFromWindow(holder: ViewHolder) {
+        super.onViewDetachedFromWindow(holder)
+        holder.clearAnim()
+    }
+
     // VH
     inner class ViewHolder : RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
@@ -41,9 +58,10 @@ class RecipeAdapter @Inject constructor() : RecyclerView.Adapter<RecipeAdapter.V
             binding.apply {
                 // Text
                 txtName.text = item.title
-                txtDesc.text = item.summary
+                val htmlFormatter = HtmlCompat.fromHtml(item.summary,HtmlCompat.FROM_HTML_MODE_COMPACT)
+                txtDesc.text = htmlFormatter
                 txtLike.text = item.aggregateLikes.toString()
-                txtTime.text = item.cookingMinutes.toString()
+                txtTime.text = item.cookingMinutes.minToHour()
                 txtHealth.text = item.healthScore.toString()
 
                 // Image
@@ -76,6 +94,13 @@ class RecipeAdapter @Inject constructor() : RecyclerView.Adapter<RecipeAdapter.V
                     }
                 }
             }
+        }
+
+        fun initAnim(){
+            binding.root.animation = AnimationUtils.loadAnimation(context,R.anim.recipe_item_anim)
+        }
+        fun clearAnim(){
+            binding.root.clearAnimation()
         }
     }
 

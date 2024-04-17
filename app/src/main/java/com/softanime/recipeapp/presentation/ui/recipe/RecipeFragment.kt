@@ -150,6 +150,7 @@ class RecipeFragment : Fragment() {
         lifecycleScope.launch {
             repeat(Int.MAX_VALUE) {
                 delay(Constants.AUTO_SCROLL_TIME)
+
                 if (bannerIndex < listSize)
                     bannerIndex += 1
                 else
